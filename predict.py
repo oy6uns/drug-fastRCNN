@@ -28,7 +28,7 @@ async def predict(file: UploadFile = File(...)):
     drug_num = await predict_pill_labels(file, model)
     return {"success": True, "message":"File uploaded successfully", "drug": drug_num}
 
-model = torch.load('Pill-Detection/model.pth', map_location=torch.device('cpu'))
+model = torch.load('model.pth', map_location=torch.device('cpu'))
 
 dict_label = {
     1: "아로나민골드",
